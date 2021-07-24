@@ -9,7 +9,7 @@ But with every allocation/deallocation of memory chunk from the pool the allocat
 
 ![image](https://user-images.githubusercontent.com/59689769/126879507-f7e03900-fdd8-4594-af1c-3f01e292babc.png)
 
-The effectiveness of allocator was tested using worst-case scenario (with maximum number of blocks uniting operations), the size of allocate chunks was 4096 bytes, mode – Release, platform Win 86. Each test run included 8 operations of allocation/deallocation. The results are the following:
+The effectiveness of allocator was tested using worst-case scenario (with maximum number of blocks uniting operations), the size of allocated chunks was 4096 bytes, mode – Release, platform Win 86. Each test run included 8 operations of allocation/deallocation. The results are the following:
 
 ![image](https://user-images.githubusercontent.com/59689769/126879531-daed89a1-25ff-449a-a432-86ffd854ae73.png)
 
