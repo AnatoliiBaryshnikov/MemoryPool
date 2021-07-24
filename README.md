@@ -5,7 +5,7 @@ So, the naive idea is to allocate the volume of memory once and to create a link
 
 ![mpool1](https://user-images.githubusercontent.com/59689769/126879376-bb12721c-fdc7-446d-b698-10dc92d0e342.png)
 
-But with every allocation/deallocation of memory chunk from the pool the allocation/deallocation of memory for nodes is also required. So, no significant speed in comparison with .malloc()/.free() is achieved. To avoid such a drawback the realized approach uses internal vector of nodes with pre-reserved memory for their total needed quantity. The adding node to the internal vector realised in a special way and costs O(n).
+But with every allocation/deallocation of memory chunk from the pool the allocation/deallocation of memory for nodes is also required. So, no significant speed in comparison with .malloc()/.free() is achieved. To avoid such a drawback the realized approach uses internal vector of nodes with pre-reserved memory for their total needed quantity. The node addition to the internal vector is realised in a way that costs O(n).
 
 ![image](https://user-images.githubusercontent.com/59689769/126879507-f7e03900-fdd8-4594-af1c-3f01e292babc.png)
 
