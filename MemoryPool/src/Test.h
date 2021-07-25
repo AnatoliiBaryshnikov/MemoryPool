@@ -6,6 +6,7 @@ namespace Test
 
   void simple_test()
     {
+    std::cout << "\n Starting simple test... \n ";
     Allocator a(4096);
 
     int* a_1int = (int*)a.allocate(sizeof(int));
