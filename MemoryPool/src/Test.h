@@ -30,6 +30,8 @@ namespace Test
 
     std::cout << (*b_1double == 1.111111111 ? "passed " : "failed") << std::endl;
     std::cout << (a_1int == nullptr ? "passed " : "failed") << std::endl;
+    std::cout << (a_2double == nullptr ? "passed " : "failed") << std::endl;
     std::cout << (a_3char == nullptr ? "passed " : "failed") << std::endl;
+
     }
   }
