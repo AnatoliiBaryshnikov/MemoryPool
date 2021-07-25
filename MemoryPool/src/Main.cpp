@@ -1,14 +1,15 @@
 #include <iostream>
 #include <chrono>
 #include "Allocator.h"
+#include "Test.h"
 
 int main()
 {
     std::cout << "A small benchmark. Run in release mode\n";
 
-    Allocator a(65536);
-    size_t alloc_size = 4096;
-    size_t repeats = 10000000;
+    Allocator a(5);
+    size_t alloc_size = 1;
+    size_t repeats = 1000000;
 
     auto start1 = std::chrono::system_clock::now();
     for (size_t i = 0; i < repeats; i++) // worst case of alloc/dealloc that invokes a lot of calls inside Allocator
@@ -67,6 +68,8 @@ int main()
     std::chrono::duration<int64_t, std::nano> time3 = end3 - start3;
     std::cout << "...working with malloc/free \n "
       << time3.count() / 1000000 << " ms\n";
+
+    Test::simple_test();
 
     system("pause");
 }

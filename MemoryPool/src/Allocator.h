@@ -35,7 +35,7 @@ class Allocator
     void* allocate(size_t size_to_alloc);
 
     template <typename T>
-    void deallocate(T* p_mem_to_dealloc);
+    void deallocate(T*& p_mem_to_dealloc);
   };
 
 
@@ -139,11 +139,12 @@ inline void* Allocator::allocate(size_t size_to_alloc)
 
 /// <summary>
 /// This function deallocates memory chunk from the pool
+/// After deallocation passed as argument pointer becomes nullptr
 /// </summary>
 /// <typeparam name="T"></typeparam>
 /// <param name="p_mem_to_dealloc"> - pointer to previously allocated memory</param>
 template <typename T>
-inline void Allocator::deallocate(T* p_mem_to_dealloc)
+inline void Allocator::deallocate(T*& p_mem_to_dealloc)
   {
   if (!m_is_valid_pool || p_mem_to_dealloc == nullptr)
     {
@@ -197,7 +198,9 @@ inline void Allocator::deallocate(T* p_mem_to_dealloc)
     temp->next = nullptr;
     temp->prev = nullptr;
     temp->p_mem_chunk = nullptr;
-    }  
+    }
+
+  p_mem_to_dealloc = nullptr;
   }
 
 
